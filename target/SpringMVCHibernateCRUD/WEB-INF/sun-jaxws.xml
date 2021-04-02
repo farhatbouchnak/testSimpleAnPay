@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+
+	<endpoint name="product" interface="com.jwt.service.ProductService"
+		implementation="com.jwt.serviceImpl.ProductServiceImpl"
+		url-pattern="/ws/product" />
+
+	<endpoint name="marchand" interface="com.jwt.service.MarchandService"
+		implementation="com.jwt.serviceImpl.MarchandServiceImpl"
+		url-pattern="/ws/marchand" />
+
+</endpoints>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/marchands/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="marchands" targetNamespace="http://www.example.org/marchands/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/marchands/">
+      <xsd:element name="addMarchand">
+        <xsd:complexType>
+          <xsd:sequence>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addMarchandResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateMarchand">
+        <xsd:complexType>
+          <xsd:sequence>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateMarchandResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteMarchand">
+        <xsd:complexType>
+          <xsd:sequence>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteMarchandResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="addMarchandRequest">
+    <wsdl:part element="tns:addMarchand" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteMarchandResponse">
+    <wsdl:part element="tns:deleteMarchandResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteMarchandRequest">
+    <wsdl:part element="tns:deleteMarchand" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addMarchandResponse">
+    <wsdl:part element="tns:addMarchandResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateMarchandRequest">
+    <wsdl:part element="tns:updateMarchand" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateMarchandResponse">
+    <wsdl:part element="tns:updateMarchandResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="MarchandServiceImpl">
+    <wsdl:operation name="addMarchand">
+      <wsdl:input message="tns:addMarchandRequest"/>
+      <wsdl:output message="tns:addMarchandResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateMarchand">
+      <wsdl:input message="tns:updateMarchandRequest"/>
+      <wsdl:output message="tns:updateMarchandResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMarchand">
+      <wsdl:input message="tns:deleteMarchandRequest"/>
+      <wsdl:output message="tns:deleteMarchandResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="marchandsSOAP" type="tns:MarchandServiceImpl">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addMarchand">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMarchand">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMarchand">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="marchands">
+    <wsdl:port binding="tns:marchandsSOAP" name="MarchandServiceImpl">
+      <soap:address location="http://localhost:8080/soapTest/services/MarchandServiceImpl"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

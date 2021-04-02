@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/products/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="products" targetNamespace="http://www.example.org/products/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/products/">
+      <xsd:element name="addProduct">
+        <xsd:complexType>
+          <xsd:sequence>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addProductResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateProduct">
+        <xsd:complexType>
+          <xsd:sequence>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateProductResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteProduct">
+        <xsd:complexType>
+          <xsd:sequence>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteProductResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="addProductRequest">
+    <wsdl:part element="tns:addProduct" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteProductResponse">
+    <wsdl:part element="tns:deleteProductResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteProductRequest">
+    <wsdl:part element="tns:deleteProduct" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addProductResponse">
+    <wsdl:part element="tns:addProductResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateProductRequest">
+    <wsdl:part element="tns:updateProduct" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateProductResponse">
+    <wsdl:part element="tns:updateProductResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="ProductServiceImpl">
+    <wsdl:operation name="addProduct">
+      <wsdl:input message="tns:addProductRequest"/>
+      <wsdl:output message="tns:addProductResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateProduct">
+      <wsdl:input message="tns:updateProductRequest"/>
+      <wsdl:output message="tns:updateProductResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteProduct">
+      <wsdl:input message="tns:deleteProductRequest"/>
+      <wsdl:output message="tns:deleteProductResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="productsSOAP" type="tns:ProductServiceImpl">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+   <wsdl:operation name="addProduct">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProduct">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteProduct">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="products">
+    <wsdl:port binding="tns:productsSOAP" name="ProductServiceImpl">
+      <soap:address location="http://localhost:8080/soapTest/services/ProductServiceImpl"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
